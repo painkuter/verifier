@@ -7,8 +7,13 @@
             crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/handler.js"></script>
+    <!--<script src="js/less.min.js"></script>-->
     <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
+    <script src="http://unpkg.com/vue@2.1.10"></script>
+    <script src="http://unpkg.com/vue-select@2.0.0"></script>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
@@ -52,15 +57,16 @@
 </nav>
 
 <div id="app" class="container">
-    <div class="form-group">
-        <input class="form-control" id="select-1" list="list-1">
-        <datalist id="list-1">
-            <option v-for="article in articles">{{ article.article }}</option>
-        </datalist>
+    <input list="list-1" type="text" class="form-control" placeholder="Select article">
+    <datalist id="list-1">
+        <option v-for="article in articles">{{ article.article }}</option>
+    </datalist>
+
+
+    <div id="list-2" class="container-fluid" >
+        <v-select label="article" :options="articles" placeholder="Select article"></v-select>
     </div>
 </div>
-</body>
-<script src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js" color="51,122,183" opacity='0.5'
-        count="50"></script>
+
 </body>
 </html>
