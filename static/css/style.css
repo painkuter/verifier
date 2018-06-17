@@ -1,0 +1,4 @@
+/*To make selector button visible always*/
+input::-webkit-calendar-picker-indicator {
+    opacity: 100;
+}
